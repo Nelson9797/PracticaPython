@@ -1,3 +1,5 @@
+# Juega piedra, papel o tijeras contra el ordenador
+
 import random
 
 bucle = True

@@ -1,3 +1,8 @@
+# Calcula cuanto costaria enviar un mensaje por telegrafo
+# Las letras valen $1
+# Los digitos valen $2
+# Los caracteres especiales y letras del casellano (á é í ó ú ñ) valen $3
+
 frase = str(input(" *"*7 + " Calculadora de Telegrafo " + "* "*7 + "\nIngresa la frase: "))
 esp = ["ñ", "á", "é", "í", "ó", "ú", "Ñ", "Á", "É", "Í", "Ó", "Ú"]
 precio = 0

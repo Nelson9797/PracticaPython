@@ -1,3 +1,5 @@
+# Comprueba si una palabra o frase es palindroma
+
 palabra = str(input("Ingresa una palabra: ").lower().replace(" ", ""))
 i = len(palabra) - 1
 arbalap = ""
