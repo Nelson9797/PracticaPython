@@ -1,46 +1,44 @@
-num = int(input("Ingresa un numero: "))
-fibbo = [1, 1]
-primo = []
-res = str(num) + " "
-
-def es_par():
-    if num % 2 == 0:
+def es_primo(numero):
+        for i in range(2, int(numero/2) + 1):
+            if numero % i == 0:
+                return False
         return True
-    else:
-        return False
+
+num = 1
+i = 1
+fibbo = [1, 1]
+primos = [2]
+
+while num != 0:
+    num = int(input("Ingresa un numero: "))
+    res = str(num)
+    es_p = True
     
-def es_fibbonacci():
-    i = 0
     while fibbo[-1] < num:
-        fibbo.append(fibbo[i] + fibbo[i+1])
+        fibbo.append(fibbo[i - 1] + fibbo[i])
         i += 1
+
+        
+    for i in range(primos[-1] + 1, num + 1):
+        if i > primos[-1]:
+            if es_primo(i):
+                primos.append(i)
+        
+    if num in primos:
+        res += " es primo"
+    else:
+        res += " no es primo"
     
     if num in fibbo:
-        return True
+        res += " es fibbonacci"
     else:
-        return False
-
-def es_primo():
-    
-    for i in range(1, num + 1):
-        if i % num == 0:
-            return False
-        else:
-            return True
-
-if es_primo():
-    res += "es primo, "
-else:
-    res += "no es primo, "
-     
-if es_fibbonacci():
-    res += "fibbonacci "
-else:
-    res += "no es fibonacci "
-    
-if es_par():
-    res += "y es par"
-else:
-    res += "y es impar"
-    
-print(res)
+        res += " no es fibonacci"
+        
+    if num % 2 == 0:
+        res += " y es par\n"
+    else:
+        res += " y es impar\n"
+        
+    print(res)
+    print(fibbo)
+    print(primos)
